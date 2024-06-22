@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .pdf-list {
+            margin-bottom: 20px;
+        }
+        .pdf-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            background-color: #f9f9f9;
+            cursor: move;
+        }
+        .pdf-item:hover {
+            background-color: #f1f1f1;
+        }
+        .pdf-preview {
+            margin-top: 20px;
+            max-height: 300px;
+            overflow: auto;
+        }
+        .size-control {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .size-control span {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">PDF Merger</h1>
+
+    <div class="form-group">
+        <input type="file" id="fileInput" multiple accept="application/pdf" class="form-control-file">
+    </div>
+
+    <div class="pdf-list" id="pdfList">
+        <!-- List of selected PDFs will be displayed here -->
+    </div>
+
+    <div class="size-control">
+        <button class="btn btn-outline-primary" id="decreaseSize">-</button>
+        <span id="sizeDisplay">100 KB</span>
+        <button class="btn btn-outline-primary" id="increaseSize">+</button>
+    </div>
+
+    <button class="btn btn-primary" id="mergeButton">Merge PDFs</button>
+    <button class="btn btn-secondary" id="resetButton">Reset</button>
+    <button class="btn btn-danger" id="exitButton">Exit</button>
+
+    <div class="pdf-preview" id="pdfPreview">
+        <!-- PDF preview will be displayed here -->
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.16.0/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
