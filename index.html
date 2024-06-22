@@ -38,6 +38,22 @@
         .size-control span {
             margin: 0 10px;
         }
+        @media (max-width: 576px) {
+            .pdf-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .pdf-item div {
+                margin-top: 10px;
+            }
+            .size-control {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .size-control span {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -59,9 +75,11 @@
         <button class="btn btn-outline-primary" id="increaseSize">+</button>
     </div>
 
-    <button class="btn btn-primary" id="mergeButton">Merge PDFs</button>
-    <button class="btn btn-secondary" id="resetButton">Reset</button>
-    <button class="btn btn-danger" id="exitButton">Exit</button>
+    <div class="d-flex flex-column">
+        <button class="btn btn-primary mb-2" id="mergeButton">Merge PDFs</button>
+        <button class="btn btn-secondary mb-2" id="resetButton">Reset</button>
+        <button class="btn btn-danger" id="exitButton">Exit</button>
+    </div>
 
     <div class="pdf-preview" id="pdfPreview">
         <!-- PDF preview will be displayed here -->
